@@ -3,11 +3,11 @@ Styling the sidenav
 */
 
 .sidenav {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 0;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	z-index: 0;
 }
 
 /*
@@ -15,8 +15,8 @@ Styling the logo
 */
 
 .sidenav__logo {
-    width: 120px;
-    margin: 25px;
+	width: 120px;
+	margin: 25px;
 }
 
 /*
@@ -24,51 +24,51 @@ Styling all the buttons
 */
 
 .sidenav__buttons {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 /*
 Styling each of the buttons
 */
 
-.sidenav__button{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: white;
-    background: 0;
-    border: 0;
-    margin: 5px 10px 5px 10px;
-    padding: 10px 15px 10px 15px;
-    border-radius: 15px;
-    width: 100%;
+.sidenav__button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	color: white;
+	background: 0;
+	border: 0;
+	margin: 5px 10px 5px 10px;
+	padding: 10px 15px 10px 15px;
+	border-radius: 15px;
+	width: 100%;
 }
 
 /*
 Make the hover action on the sidenav buttons
 */
 
-.sidenav__button:hover{
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.128);
+.sidenav__button:hover {
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.128);
 }
 
 /*
 Change the font of the side nav buttons
 */
 
-.sidenav__button > span{
-    font-size: 18px;
-    font-weight: bolder;
-    margin-left: 10px;
+.sidenav__button > span {
+	font-size: 18px;
+	font-weight: bolder;
+	margin-left: 10px;
 }
 
 /*
 Change the font of only the "more" button
 */
 
-.sidenav__more{
-    position: fixed;
-    bottom: 3px;
+.sidenav__more {
+	position: fixed;
+	bottom: 3px;
 }
