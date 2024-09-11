@@ -1,5 +1,5 @@
-import './App.css';
-import Homepage from './Homepage';
+import "./App.css";
+import Homepage from "./Homepage";
 
 //"yrn start" on terminal to run
 

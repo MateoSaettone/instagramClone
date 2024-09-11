@@ -1,14 +1,14 @@
-import React from 'react';
-import './Sidenav.css';
-import HomeIcon from '@mui/icons-material/Home';
-import SearchIcon from '@mui/icons-material/Search';
-import ExploreIcon from '@mui/icons-material/Explore';
-import SlideshowIcon from '@mui/icons-material/Slideshow';
-import ChatIcon from '@mui/icons-material/Chat';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Menu } from '@mui/material';
+import React from "react";
+import "./Sidenav.css";
+import HomeIcon from "@mui/icons-material/Home";
+import SearchIcon from "@mui/icons-material/Search";
+import ExploreIcon from "@mui/icons-material/Explore";
+import SlideshowIcon from "@mui/icons-material/Slideshow";
+import ChatIcon from "@mui/icons-material/Chat";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import MenuIcon from "@mui/icons-material/Menu";
+/*import { Menu } from "@mui/material";*/
 
 function Sidenav() {
 	return (
@@ -16,7 +16,7 @@ function Sidenav() {
 			<img
 				className="sidenav__logo"
 				src="https://seeklogo.com/images/M/macaco-logo-9CCE124A41-seeklogo.com.png"
-				alt="Image"
+				alt="Sidenav logo"
 			/>
 
 			<div className="sidenav__buttons">
