@@ -15,7 +15,7 @@ function Sidenav() {
 		<div className="sidenav">
 			<img
 				className="sidenav__logo"
-				src="https://seeklogo.com/images/M/macaco-logo-9CCE124A41-seeklogo.com.png"
+				src="https://umamiharstad.no/wp-content/uploads/2018/09/instagram-font-logo-white-png.png"
 				alt="Sidenav logo"
 			/>
 
