@@ -36,7 +36,7 @@ function Sidenav() {
 				</button>
 
 				<button className="sidenav__button">
-					<SlideshowIcon />
+					<SlideshowIcon />g
 					<span>Reels</span>
 				</button>
 
