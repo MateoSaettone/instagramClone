@@ -1,42 +1,27 @@
-from fastapi import FastAPI, HTTPException, Depends
-from typing import Annotated, List
-from sqlalchemy.orm import Session
+from fastapi import FastAPI, HTTPException, Depends, status
 from pydantic import BaseModel
-from database import SessionLocal, engine
+from typing import Annotated
 import models
-from fastapi.middleware.cors import CORSMiddleware
-from database import engine
+from database import SessionLocal, engine
+from sqlalchemy.orm import Session
 
 # .\env\Scripts\Activate
 # uvicorn main:app --reload
 
-
 app = FastAPI()
+models.Base.metadata.create_all(bind=engine)
 
-origins = [
-    "http://localhost:3000"
-]
+class UserBase(BaseModel):
+    username: str
+    password: str
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-)
-
-
-class TransactionBase(BaseModel):
-    amount: float
-    category: str
+class PostBase(BaseModel):
+    caption: str
     description: str
-    is_income: bool
-    date: str
-
-class TransactionModel(TransactionBase):
-    id: int
+    likes: int
+    image_url: str
+    user_id: int
     
-    class Config:
-        orm_mode = True
-    
-
 def get_db():
     db = SessionLocal()
     try:
@@ -47,23 +32,11 @@ def get_db():
 
 db_dependency = Annotated[Session, Depends(get_db)]
 
-models.Base.metadata.create_all(bind=engine)
-
-
-@app.post("/transactions/", response_model=TransactionModel)
-
-async def create_transaction(transaction: TransactionBase, db: db_dependency):
-    print('he')
-    db_transaction = models.Transaction(**transaction.model_dump())
-    db.add(db_transaction)
+@app.post("/users/", status_code=status.HTTP_201_CREATED)
+async def create_user(user: UserBase, db: db_dependency):
+    db_user = models.User(**user.dict())
+    db.add(db_user)
     db.commit()
-    db.refresh(db_transaction)
-    return db_transaction
-
-
-
-
-
 
 
 
