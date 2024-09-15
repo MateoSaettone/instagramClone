@@ -17,3 +17,5 @@ class Post(Base):
     likes = Column(Integer)
     image_url = Column(String(255))
     user_id = Column(Integer)
+
+   
