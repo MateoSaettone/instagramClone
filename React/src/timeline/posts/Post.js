@@ -9,7 +9,7 @@ import {
 	Telegram,
 } from '@mui/icons-material';
 
-function Post({ user, postImage, likes, timestamp }) {
+function Post({ user, postImage, likes, timestamp, description }) {
 	return (
 		<div className="post">
 			<div className="post__header">
@@ -40,9 +40,11 @@ function Post({ user, postImage, likes, timestamp }) {
 					</div>
 					<div className="post__iconsMain"></div>
 				</div>
-					<span className="post__likes">
-						Liked by {likes} people.
-					</span>
+				<span className="post__likes"> {likes} likes </span>
+			</div>
+			<div className="post__description">
+				<span className="post__descriptionUsername"> {user} </span>
+				<span className="post_descriptionText"> {description} </span>
 			</div>
 		</div>
 	);

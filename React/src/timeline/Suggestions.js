@@ -2,7 +2,7 @@ import { Avatar } from "@mui/material";
 import React from "react";
 import "./Suggestions.css";
 
-function Suggestions() {
+function Suggestions({ user =  "404"}) {
   return (
     <div className="suggestions">
       <div className="suggestions__title">Suggestions for you</div>
@@ -10,49 +10,10 @@ function Suggestions() {
         <div className="suggestions__username">
           <div className="username__left">
             <span className="avatar">
-              <Avatar>R</Avatar>
+              <Avatar>{user.charAt(0).toUpperCase()}</Avatar>
             </span>
             <div className="username__info">
-              <span className="username">redian_</span>
-              <span className="relation">New to Instagram</span>
-            </div>
-          </div>
-          <button className="follow__button">Follow</button>
-        </div>
-
-        <div className="suggestions__username">
-          <div className="username__left">
-            <span className="avatar">
-              <Avatar>R</Avatar>
-            </span>
-            <div className="username__info">
-              <span className="username">redian_</span>
-              <span className="relation">New to Instagram</span>
-            </div>
-          </div>
-          <button className="follow__button">Follow</button>
-        </div>
-
-        <div className="suggestions__username">
-          <div className="username__left">
-            <span className="avatar">
-              <Avatar>R</Avatar>
-            </span>
-            <div className="username__info">
-              <span className="username">redian_</span>
-              <span className="relation">New to Instagram</span>
-            </div>
-          </div>
-          <button className="follow__button">Follow</button>
-        </div>
-
-        <div className="suggestions__username">
-          <div className="username__left">
-            <span className="avatar">
-              <Avatar>R</Avatar>
-            </span>
-            <div className="username__info">
-              <span className="username">redian_</span>
+              <span className="username">{user}</span>
               <span className="relation">New to Instagram</span>
             </div>
           </div>

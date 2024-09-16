@@ -52,6 +52,7 @@
 
 .post__footer {
 	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .post__like {
@@ -71,6 +72,22 @@
 }
 
 .post__likes {
+	font-weight: bold;
 	margin-left: 50px;
+}
+
+.post__description {
+	display: flex;
+	flex-direction: row;
+	margin-left: 50px;
+}
+
+.post__descriptionUsername {
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+.post__descriptionText {
+
 }
 

@@ -7,6 +7,7 @@ import axios from 'axios';
 
 function Timeline() {
 	const [posts, setPosts] = useState([]);
+	const [suggestions, setSuggestions] = useState([])
 
 	// Fetch posts from FastAPI when the component mounts
 	useEffect(() => {
@@ -31,10 +32,11 @@ function Timeline() {
 						posts.map((post) => (
 							<Post
 								key={post.id}
-								user={`User ${post.user_id}`}  // Mapping user_id to a placeholder user name (you can fetch user data separately if needed)
+								user={post.username || ""}  // Mapping user_id to a placeholder user name (you can fetch user data separately if needed)
 								postImage={post.image_url}      // Mapping image_url to postImage
 								likes={post.likes}              // No change needed for likes
-								timestamp={post.timestamp || "Just now"}  // Since timestamp doesn't exist, using a placeholder
+								timestamp={post.timestamp || "Just now"}
+								description={post.description || ""}  // Since timestamp doesn't exist, using a placeholder
 							/>
 						))
 					) : (
