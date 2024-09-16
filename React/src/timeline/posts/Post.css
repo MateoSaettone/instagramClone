@@ -18,31 +18,59 @@
 	font-weight: bolder;
 }
 
-.post__headerAuthor > span {
-	color: grey;
-	font-size: 15px;
-}
-
 .post__image > img {
 	width: 600px;
 	height: 600px;
-	border-radius: 6px;
+	margin-left: 50px;
+	align-items: center;
+	border-radius: 3px;
 	border: 0.06px solid rgba(128, 128, 128, 0.516);
 	object-fit: cover;
 }
 
 .post__footerIcons {
+	margin-left: 50px;
 	display: flex;
 	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.postIcon {
-	padding: 6px;
-	font-size: 30px;	
 }
 
 .postIcon:hover {
 	cursor: pointer;
 }
+
+.post__timestamp {
+	color: grey;
+	font-size: 15px;
+	margin-left: 5px;
+}
+
+.post__username {
+	margin-left: 5px;
+	margin-right: 5px;
+	color: white;
+}
+
+.post__footer {
+	margin-top: 5px;
+}
+
+.post__like {
+	margin-right: 5px;
+}
+
+.post__comment {
+	margin-right: 5px;
+}
+
+.post__like {
+	margin-right: 5px;
+}
+
+.post__save {
+	margin-left: 500px;
+}
+
+.post__likes {
+	margin-left: 50px;
+}
+

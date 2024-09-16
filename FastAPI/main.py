@@ -8,6 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 # .\env\Scripts\Activate
 # uvicorn main:app --reload
+# source env/bin/activate  # On mac
 
 app = FastAPI()
 models.Base.metadata.create_all(bind=engine)
