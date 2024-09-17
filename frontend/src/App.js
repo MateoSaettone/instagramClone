@@ -18,7 +18,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './authentication/Login';
-import ProtectedPage from './authentication/Protected';
+import Homepage from "./Homepage";
+import "./App.css";
 
 function App() {
 	return (
@@ -30,7 +31,7 @@ function App() {
 				/>
 				<Route
 					path="/protected"
-					element={<ProtectedPage />}
+					element={<Homepage />}
 				/>
 			</Routes>
 		</Router>
