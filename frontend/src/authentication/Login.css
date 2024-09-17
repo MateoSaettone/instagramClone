@@ -1,0 +1,18 @@
+.login__page {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.login__left {
+	margin-left: 500px;
+	margin-top: 950px;
+}
+
+.login__image {
+	height: 800px;
+}
+
+.login__instaLogo {
+	width: 300px;
+}

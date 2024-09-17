@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "./Login.css";
 
 function Login() {
 	const [username, setUsername] = useState('');
@@ -53,32 +54,37 @@ function Login() {
 	};
 
 	return (
-		<div>
-			<form onSubmit={handleSubmit}>
-				<div>
-					<label>Username:</label>
-					<input
-						type="text"
-						value={username}
-						onChange={(e) => setUsername(e.target.value)}
-					/>
-				</div>
-				<div>
-					<label>Password:</label>
-					<input
-						type="password"
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
-					/>
-				</div>
-				<button
-					type="submit"
-					disabled={loading}
-				>
-					{loading ? 'Logging in...' : 'Login'}
-				</button>
-				{error && <p style={{ color: 'red' }}>{error}</p>}
-			</form>
+		<div className='login__page'>
+			<div className="login__left"></div>
+      <img className="login__image" src="https://i.imgur.com/P3Vm1Kq.png" alt="instaloginimage" />
+			<div className="login__right">
+        <img className='login__instaLogo' src="https://www.pngkey.com/png/full/28-287308_instagram-logo-text-white.png" alt="insta logo" />
+				<form onSubmit={handleSubmit}>
+					<div>
+						<label>Username:</label>
+						<input
+							type="text"
+							value={username}
+							onChange={(e) => setUsername(e.target.value)}
+						/>
+					</div>
+					<div>
+						<label>Password:</label>
+						<input
+							type="password"
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
+						/>
+					</div>
+					<button
+						type="submit"
+						disabled={loading}
+					>
+						{loading ? 'Logging in...' : 'Login'}
+					</button>
+					{error && <p style={{ color: 'red' }}>{error}</p>}
+				</form>
+			</div>
 		</div>
 	);
 }
