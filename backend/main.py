@@ -196,6 +196,22 @@ async def update_post(post_id: int, post_update: PostUpdate, db: db_dependency):
     db.commit()
     return db_post
 
+# Route to create a new story
+@app.post("/stories/", status_code=status.HTTP_201_CREATED)
+async def create_story(story: StoryBase, db: db_dependency):
+    # Create a new Story instance using the request data
+    db_story = models.Story(
+        username=story.username,
+        image_url=story.image_url
+    )
+    
+    db.add(db_story)  # Add the story to the database session
+    db.commit()       # Commit the session to save the story in the database
+    db.refresh(db_story)  # Refresh the instance to retrieve any auto-generated fields (like id)
+    
+    return db_story  # Return the newly created story
+
+
 # Route to delete a post by ID
 @app.delete("/posts/{post_id}", status_code=status.HTTP_200_OK)
 async def delete_post(post_id: int, db: db_dependency):
