@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import Post from './posts/Post';
 import Suggestions from './Suggestions';
-import Stories from './stories/Stories'; // Import the Stories component
+import Stories from './stories/Stories';
 import './Timeline.css';
 import axios from 'axios';
 
 function Timeline() {
 	const [posts, setPosts] = useState([]);
-	const [stories, setStories] = useState([]); // State for stories
-	// const [suggestions, setSuggestions] = useState([]);
+	const [stories, setStories] = useState([]);
 
-	// Fetch posts from FastAPI when the component mounts
+	// Get the posts from fastapi using axios
 	useEffect(() => {
 		const fetchPosts = async () => {
 			try {
-				const response = await axios.get('http://localhost:8000/posts/');
+				const response = await axios.get(
+					'http://localhost:8000/posts/'
+				);
 				console.log('Fetched posts:', response.data);
 				setPosts(response.data);
 			} catch (error) {
@@ -25,11 +26,13 @@ function Timeline() {
 		fetchPosts();
 	}, []);
 
-	// Fetch stories from FastAPI when the component mounts
+	// Same thing but for stories
 	useEffect(() => {
 		const fetchStories = async () => {
 			try {
-				const response = await axios.get('http://localhost:8000/stories/');
+				const response = await axios.get(
+					'http://localhost:8000/stories/'
+				);
 				console.log('Fetched stories:', response.data);
 				setStories(response.data);
 			} catch (error) {
@@ -44,12 +47,13 @@ function Timeline() {
 		<div className="timeline">
 			<div className="timeline__left">
 				<div className="timeline__stories">
-					{/* Stories section */}
 					{stories.length > 0 ? (
-						<Stories stories={stories.map(story => ({
-							user: story.username,
-							image: story.image_url, // Map the image from the API's 'url' field
-						}))} />
+						<Stories
+							stories={stories.map((story) => ({
+								user: story.username,
+								image: story.image_url,
+							}))}
+						/>
 					) : (
 						<p>No stories available</p>
 					)}
@@ -59,11 +63,11 @@ function Timeline() {
 						posts.map((post) => (
 							<Post
 								key={post.id}
-								user={post.username || ''} 
-								postImage={post.image_url} 
-								likes={post.likes} 
+								user={post.username || ''}
+								postImage={post.image_url}
+								likes={post.likes}
 								timestamp={post.timestamp || 'Just now'}
-								description={post.description || ''} 
+								description={post.description || ''}
 							/>
 						))
 					) : (

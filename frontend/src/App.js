@@ -1,25 +1,9 @@
-// import "./App.css";
-// import Authentication from "./authentication/Authentication";
-// import Homepage from "./Homepage";
-
-// //"yrn start" on terminal to run
-
-// function App() {
-// 	return (
-// 		<div className="app">
-// 			{/*<Homepage />*/}
-// 			<Authentication />
-// 		</div>
-// 	);
-// }
-
-// export default App;
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './authentication/Login';
-import Homepage from "./Homepage";
-import "./App.css";
+import Homepage from './Homepage';
+import PrivateRoute from './authentication/PrivateRoute'; // Import the PrivateRoute component
+import './App.css';
 
 function App() {
 	return (
@@ -29,9 +13,15 @@ function App() {
 					path="/"
 					element={<Login />}
 				/>
+
+				{/* Protect the /protected route */}
 				<Route
 					path="/protected"
-					element={<Homepage />}
+					element={
+						<PrivateRoute>
+							<Homepage />
+						</PrivateRoute>
+					}
 				/>
 			</Routes>
 		</Router>
